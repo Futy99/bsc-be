@@ -4,7 +4,7 @@ import * as firebaseAdmin from 'firebase-admin';
 import { logger } from './logger';
 import { router } from './router';
 
-const serviceAccount = require('../config/firebaseServiceKey.json');
+const serviceAccount = require('./firebaseServiceKey.json');
 
 firebaseAdmin.initializeApp({
     credential: firebaseAdmin.credential.cert(serviceAccount),

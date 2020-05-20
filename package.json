@@ -1,0 +1,61 @@
+{
+  "name": "nodejs-typescript-starter",
+  "version": "0.1.0",
+  "description": "Typescript starter pack for typescript/node.js development.",
+  "main": "index.js",
+  "repository": "https://github.com/qest-cz/nodejs-typescript-starter.git",
+  "author": "Radim Štěpaník <radim.stepanik@gmail.com>",
+  "contributors": [
+    "Jindřich Máca <jindrich.maca@qest.cz>"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "prettier:run": "prettier all --write \"src/**/*.ts\"",
+    "prettier:check": "prettier all -l \"src/**/*.ts\"",
+    "prettier:version": "prettier -v",
+    "tslint:run": "tslint --fix -c tslint.json -p .",
+    "tslint:check": "tslint -c tslint.json -p .",
+    "tsc:check": "tsc --noEmit",
+    "dev": "cross-env NODE_ENV=dev ts-node-dev --no-notify -r dotenv/config src/index.ts dotenv_config_path=./config/.env | pino-pretty",
+    "code:fix": "concurrently \"yarn tslint:run\" \"yarn prettier:run\"",
+    "code:check": "concurrently \"yarn prettier:check\" \"yarn tslint:check\" \"yarn tsc:check\"",
+    "test": "DOTENV_CONFIG_PATH=./config/.env.test jest",
+    "test:watch": "yarn test --watch",
+    "test:update": "yarn test --updateSnapshot",
+    "test:cover": "yarn test --coverage",
+    "start": "node -r dotenv/config dist/src/index.js dotenv_config_path=./config/.env",
+    "clean": "concurrently 'rm -rf dist' 'rm -rf coverage'"
+  },
+  "dependencies": {
+    "@google-cloud/firestore": "^3.8.0",
+    "@qest/express-utils": "^1.0.2",
+    "@types/express": "^4.17.3",
+    "dotenv": "^6.0.0",
+    "express": "^4.17.1",
+    "firebase-admin": "^8.12.1",
+    "http-status-codes": "^1.4.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.17",
+    "@types/mongodb": "^3.5.2",
+    "@types/node": "^12.7.1",
+    "concurrently": "^4.1.0",
+    "cross-env": "^5.1.4",
+    "jest": "^24.8.0",
+    "mocha": "^5.1.1",
+    "mongodb": "^3.5.5",
+    "nyc": "^14.1.1",
+    "pino-pretty": "^3.2.0",
+    "prettier": "1.19.1",
+    "rimraf": "^2.6.2",
+    "ts-jest": "^24.0.2",
+    "ts-node": "^8.3.0",
+    "ts-node-dev": "^1.0.0-pre.40",
+    "tslint": "^5.18.0",
+    "tslint-config-airbnb": "^5.11.1",
+    "tslint-config-prettier": "^1.13.0",
+    "tslint-eslint-rules": "^5.3.1",
+    "typescript": "^3.8.3"
+  }
+}

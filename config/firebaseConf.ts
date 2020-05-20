@@ -1,10 +1,13 @@
 export const firebaseConfig = {
-  apiKey: 'AIzaSyC1v4MgDZI4XIhvteteQ1mv13RarpFW_CM',
-  authDomain: 'roadio-6cc05.firebaseapp.com',
-  databaseURL: 'https://roadio-6cc05.firebaseio.com',
-  projectId: 'roadio-6cc05',
-  storageBucket: 'roadio-6cc05.appspot.com',
-  messagingSenderId: '1043628737833',
-  appId: '1:1043628737833:web:77b4f53151c6b9953be338',
-  measurementId: 'G-RRB0F9TN3S',
+  type: 'service_account',
+  project_id: 'roadio-6cc05',
+  private_key_id: 'a286b94dfa20354c1b83060a318dfbf34fe969d5',
+  // tslint:disable-next-line: max-line-length
+  private_key: '-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCe+JrA+a5/k43J\nGKJCLA20Q46hcfLiALC0L0msD0hhCiyv9uDeDMx/lVa8UPXIZ5ySiu79HJ73loxv\n+5zm4fypOQ1HsEbU7MpiuEMG5jOSl61UByPw/8/iHyU21mojmkqWWa/enw0Rs6cB\nfpx9DsQOHIw/nsH0gelTRXoC7DNj+wCIXb5C4q5PMNhsQiq3yQF8hrea8uuqcS0m\nnkxcsXreThR+OutC1lIssMe9a6312OA3GJ5Z7o13rtbgjsrpIoshrqjAh/BXwrYV\nkYvS2UDOUUc6bkTMdjMwstXhrSRjMU16jnsi5mDlx9hlIAXVrOrGIAIeSITM0Tgy\nME/BMItRAgMBAAECggEAAgnNYvcKMgmQZYkvn2oulmadWajH3lz3s9lW+C7nLmAk\n6/BEhT3w+BvQLzCMjjbB4hRU9YepHbyShwClzBIOtshYySTTkhK9LGBEP75/Ri+a\nrqHVNKRbCoFJIJEsO2uhh2ViZP5xR1sgPShd7xgoeS1yVBuzGfFgFMvzWtejd9jK\nKT4PbyayjvW1TjXpzwVvTWWZh4P/XwYfcetYYR5DymxP7gGKPs6Y84J1d5BZxWnm\ntEgauQTgRwnNpxGFIw75+5Sye6yShPfrxS5QuUFym53f/hACaE2a/JmOtpLiQpTP\nAKY/hZP6e4e4yLNa6CRskIiOmzCCKcPpxsxyvGmciQKBgQDY3NAXOgMPacnu2NzL\n8mZKl6FQOtmylRZmwdLF9S3DdiOlKrRf8r4TjyfXsEZCUxTyIwNSbKVW8Zpzdymr\nmPGFugQLNAXs+W25sLk1GTlrlozdlZvjCtmwrb/Qp79YVlNPYNm0R4dlQkXEOhTE\nXaTSt41jONqA8ALOs4umh5RShQKBgQC7qSunF5Qf7gDdO0jZSr/ew3mcC5ReJzWG\nfsEjAdacHRks6AXQBz02NG0w3+ZYuksB+j74x6lknQae60bmKrcOUFYOAUuDP9q3\nguNlcty2s9PDsBfpsE2blTcLpRtVGAbplF/g9SzRkECyJ4dO56WokRwo1DZekNVB\nCH2/DNedXQKBgAvXyzlpfp9J3LBBgZVVsIZkT3ftLtRU1ftYnGUZJZ2mBv5PHbib\nrgutZrSduMiIdv1eMiE/M6xS12d02362hIIUDYJ7HdO6L2bTotmmff9FIn47XF8C\nya6fXnlLn+R4GmacWGdC/L7n5p13uoiawJSNV5hSk4Q1F0IohfjbMJttAoGAGxo2\nlL5CBU6BT3I1djRme4ytroy5k9OD1nXN/PlR/l/xd9vWoxG4lHCD6JAdm2jkVlfG\n6nUjkMVg5GjEZ495upZ9py4mssDxHJnJr6gkGjrkdZmkCnsM6lBlj8f7p5F9xhRI\nuJuQKn/z6AbvcsTf1vWGJJtpcsTmF6tbRdFb/n0CgYB2Lkip435jwQzb+nw0MjRr\nOim4XuYtBWcUgeIZWh4iAtH9djmWc1MKGdC+rq7HJi8BWlqiiG/AXL31RsowUxDw\nasnfgF4WU9u2ioDxFLuYkbtpgJUpgKdiRKRJZJxbGBxWYXhWjc1TLzkqBApdclgc\nFPEa5qQRvo8RdQiddMJDmA==\n-----END PRIVATE KEY-----\n',
+  client_email: 'roadio-6cc05@appspot.gserviceaccount.com',
+  client_id: '106528165794349832236',
+  auth_uri: 'https://accounts.google.com/o/oauth2/auth',
+  token_uri: 'https://oauth2.googleapis.com/token',
+  auth_provider_x509_cert_url: 'https://www.googleapis.com/oauth2/v1/certs',
+  client_x509_cert_url: 'https://www.googleapis.com/robot/v1/metadata/x509/roadio-6cc05%40appspot.gserviceaccount.com',
 };

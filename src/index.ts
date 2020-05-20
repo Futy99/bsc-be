@@ -25,8 +25,8 @@ const expressServer = server(
 
 const listen = () => {
     return expressServer
-        .listen(process.env.PORT || 8080, () => {
-            logger.info('[Express] Listening at 8080');
+        .listen(process.env.PORT || 8000, () => {
+            logger.info('[Express] Listening at 8000');
         })
         .on('error', (e) => logger.error(e));
 };

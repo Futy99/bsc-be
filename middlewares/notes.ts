@@ -11,18 +11,16 @@ export const getNotes = async(req: express.Request, res: express.Response, next:
   const notesRef = databaseInstance.collection(COLLECTIONS.NOTES);
   await notesRef.get()
     .then(snapshot => {
-      let snaps = {};
+      const snaps = [];
       snapshot.forEach(doc => {
-        snaps = {
-          ...snaps,
-          [doc.id]: {
-            id: doc.id,
-            ...doc.data(),
-          },
-        };
+        const { id } = doc;
+        snaps.push({
+          id,
+          ...doc.data(),
+        });
       });
-      res.status(STATUS_CODES.OK);
       res.type('text/json');
+      res.status(STATUS_CODES.OK);
       res.send(snaps);
     })
     .catch(err => {
@@ -38,17 +36,18 @@ export const getNote = async(req: express.Request, res: express.Response, next: 
   let body = {}; 
   noteRef.get()
   .then(doc => {
-      if (!doc.exists) {
-        res.status(STATUS_CODES.BAD_REQUEST);
+    const { exists } = doc;
+      if (!exists) {
         res.type('text/json');
+        res.status(STATUS_CODES.BAD_REQUEST);
         res.send(`No such id ${id}`);
       } else {
         body = {
           id,
           ...doc.data(),
         };
-        res.status(STATUS_CODES.OK);
         res.type('text/json');
+        res.status(STATUS_CODES.OK);
         res.send(body);
       }
   })
@@ -70,8 +69,8 @@ export const addNote = async(req: express.Request, res: express.Response, next: 
       id,
       note,
     };
-    res.status(STATUS_CODES.OK);
     res.type('text/json');
+    res.status(STATUS_CODES.OK);
     res.send(body);
   }).catch((err) => {
     res.status(STATUS_CODES.INTERNAL_SERVER_ERROR);
@@ -86,8 +85,8 @@ export const updateNote = async(req: express.Request, res: express.Response, nex
   databaseInstance.collection(COLLECTIONS.NOTES).doc(id).update({
     note, 
   }).then(() => {
-    res.status(STATUS_CODES.OK);
     res.type('text/json');
+    res.status(STATUS_CODES.OK);
     res.send(body);
   }).catch((err) => {
     res.status(STATUS_CODES.INTERNAL_SERVER_ERROR);
@@ -100,8 +99,8 @@ export const deleteNote = async(req: express.Request, res: express.Response, nex
   const { id } = req.params;
   databaseInstance.collection(COLLECTIONS.NOTES).doc(id).delete()
     .then(() => {
-      res.status(STATUS_CODES.ACCEPTED);
       res.type('text/json');
+      res.status(STATUS_CODES.ACCEPTED);
       res.send(id);
     }).catch((err) => {
       res.status(STATUS_CODES.INTERNAL_SERVER_ERROR);

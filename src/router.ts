@@ -4,7 +4,7 @@ import { addNote, deleteNote, getNote, getNotes, updateNote } from '../middlewar
 
 export const router = Router()
     .get('/notes', getNotes)
-    .get('/note/:id', getNote)
-    .put('/notes/:note', addNote)
-    .post('/notes/:id&:note', updateNote)
-    .delete('/notes/:id', deleteNote);
+    .get('/note', getNote)
+    .put('/notes', addNote)
+    .post('/notes', updateNote)
+    .delete('/notes', deleteNote);

@@ -31,7 +31,7 @@ export const getNotes = async(req: express.Request, res: express.Response, next:
 };
 
 export const getNote = async(req: express.Request, res: express.Response, next: express.NextFunction) => {
-  const { id } = req.params;
+  const { id } = req.query;
   const noteRef = databaseInstance.collection(COLLECTIONS.NOTES).doc(id);
   let body = {}; 
   noteRef.get()
@@ -59,7 +59,7 @@ export const getNote = async(req: express.Request, res: express.Response, next: 
 };
 
 export const addNote = async(req: express.Request, res: express.Response, next: express.NextFunction) => {
-  const { note } = req.params;
+  const { note } = req.query;
   let body = {};
   databaseInstance.collection(COLLECTIONS.NOTES).add({
     note, 
@@ -80,7 +80,7 @@ export const addNote = async(req: express.Request, res: express.Response, next: 
 };
 
 export const updateNote = async(req: express.Request, res: express.Response, next: express.NextFunction) => {
-  const { id, note } = req.params;
+  const { id, note } = req.query;
   const body = { id, note};
   databaseInstance.collection(COLLECTIONS.NOTES).doc(id).update({
     note, 
@@ -96,7 +96,7 @@ export const updateNote = async(req: express.Request, res: express.Response, nex
 };
 
 export const deleteNote = async(req: express.Request, res: express.Response, next: express.NextFunction) => {
-  const { id } = req.params;
+  const { id } = req.query;
   databaseInstance.collection(COLLECTIONS.NOTES).doc(id).delete()
     .then(() => {
       res.type('text/json');

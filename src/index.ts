@@ -1,4 +1,5 @@
-import { corsSetup, server } from '@qest/express-utils';
+import { server } from '@qest/express-utils';
+import * as cors from 'cors';
 import * as firebaseAdmin from 'firebase-admin';
 
 import { logger } from './logger';
@@ -16,7 +17,7 @@ const expressServer = server(
     {
         logger,
         router,
-        preMiddleware: [corsSetup('*')],
+        preMiddleware: [cors()],
     },
     {
         useDefaultMiddlewares: true,

@@ -26,6 +26,7 @@
     "@google-cloud/firestore": "^3.8.0",
     "@qest/express-utils": "^1.0.2",
     "@types/express": "^4.17.3",
+    "cors": "^2.8.5",
     "dotenv": "^6.0.0",
     "express": "^4.17.1",
     "firebase-admin": "^8.12.1",

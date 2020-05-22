@@ -1,11 +1,11 @@
 
-#BSC test project
+# BSC test project
 
 - Simple nodejs backend using express server
 - Data are stored in Firebase firestore database
 
 
-###methods:
+### methods:
 
 ```
 GET /notes // fetch all notes 

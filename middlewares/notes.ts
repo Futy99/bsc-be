@@ -80,7 +80,7 @@ export const addNote = async(req: express.Request, res: express.Response, next: 
 };
 
 export const updateNote = async(req: express.Request, res: express.Response, next: express.NextFunction) => {
-  const { id, note } = req.query;
+  const { id, note } = req.body.params;
   const body = { id, note};
   databaseInstance.collection(COLLECTIONS.NOTES).doc(id).update({
     note, 

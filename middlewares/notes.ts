@@ -59,7 +59,7 @@ export const getNote = async(req: express.Request, res: express.Response, next: 
 };
 
 export const addNote = async(req: express.Request, res: express.Response, next: express.NextFunction) => {
-  const { note } = req.query;
+  const { note } = req.body.params;
   let body = {};
   databaseInstance.collection(COLLECTIONS.NOTES).add({
     note, 
